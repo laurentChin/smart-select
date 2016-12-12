@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/laurentChin/smart-select/issues"
   },
-  "homepage": "https://github.com/laurentChin/smart-select#readme"
+  "homepage": "https://github.com/laurentChin/smart-select#readme",
+  "dependencies": {
+    "@polymer/polymer": "github:Polymer/polymer"
+  }
 }
