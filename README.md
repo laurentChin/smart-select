@@ -1,2 +1,2 @@
 # smart-select
-A smart select web component build with polymer
+A fully responsive smart select web component build with polymer
