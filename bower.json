@@ -1,0 +1,27 @@
+{
+  "name": "smart-select",
+  "description": "A smart select web component build with Polymer",
+  "main": "index.js",
+  "authors": [
+    "Laurent Janet <laurent.janet@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "web-component",
+    "polymer",
+    "form",
+    "select",
+    "responsive"
+  ],
+  "homepage": "https://github.com/laurentChin/smart-select",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.7.1"
+  }
+}
