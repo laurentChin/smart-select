@@ -23,5 +23,8 @@
     "url": "https://github.com/laurentChin/smart-select/issues"
   },
   "homepage": "https://github.com/laurentChin/smart-select#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "lite-server": "^2.2.2"
+  }
 }
