@@ -1,7 +1,7 @@
 {
   "name": "smart-select",
   "version": "0.0.1",
-  "description": "A smart select web component build with polymer",
+  "description": "A smart select web component build with VanillaJS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,7 +23,5 @@
     "url": "https://github.com/laurentChin/smart-select/issues"
   },
   "homepage": "https://github.com/laurentChin/smart-select#readme",
-  "dependencies": {
-    "@polymer/polymer": "github:Polymer/polymer"
-  }
+  "dependencies": {}
 }
