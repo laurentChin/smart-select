@@ -24,7 +24,9 @@
     "url": "https://github.com/laurentChin/smart-select/issues"
   },
   "homepage": "https://github.com/laurentChin/smart-select#readme",
-  "dependencies": {},
+  "dependencies": {
+    "webcomponents.js": "^0.7.23"
+  },
   "devDependencies": {
     "lite-server": "^2.2.2"
   }
