@@ -4,8 +4,7 @@
   "description": "A smart select web component build with VanillaJS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "lite-server -c bs-config.json"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -27,7 +26,5 @@
   "dependencies": {
     "webcomponents.js": "^0.7.23"
   },
-  "devDependencies": {
-    "lite-server": "^2.2.2"
-  }
+  "devDependencies": {}
 }
