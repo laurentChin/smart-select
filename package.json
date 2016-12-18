@@ -23,8 +23,6 @@
     "url": "https://github.com/laurentChin/smart-select/issues"
   },
   "homepage": "https://github.com/laurentChin/smart-select#readme",
-  "dependencies": {
-    "webcomponents.js": "^0.7.23"
-  },
+  "dependencies": {},
   "devDependencies": {}
 }
