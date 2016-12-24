@@ -83,7 +83,7 @@
           'value': '-',
           'label': 'Pick a value in the list'
         },
-        notify: true
+        readOnly: true
       }
     },
     listeners: {
@@ -94,6 +94,7 @@
     },
     select: function(evt, detail) {
       this.selected = evt.target.item;
+      this.fire('select', evt.target.item);
     }
   });
 </script>
