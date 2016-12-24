@@ -6,5 +6,17 @@
 <script>
   Polymer({
     is: 'smart-select',
+    properties: {
+      choices: {
+        type: Array,
+        value: []
+      },
+      selected: {
+        value: {
+          'value': '-',
+          'label': 'Pick a value in the list'
+        }
+      }
+    }
   });
 </script>
