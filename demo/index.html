@@ -11,6 +11,12 @@
   <link rel="import" href="../smart-select.html">
 </head>
 <body>
-  <smart-select choices='[{"value": "1", "label": "test 1"}, {"value": "1", "label": "test 1"}]'></smart-select>
+  <smart-select choices='[{"value": "1", "label": "test 1"}, {"value": "2", "label": "test 2"}]'></smart-select>
+  <script>
+    document.querySelector('smart-select')
+      .addEventListener('select', (evt) => {
+        alert(evt.detail.label + ' [' + evt.detail.value + '] has been selected.');
+      });
+  </script>
 </body>
 </html>
