@@ -1,6 +1,10 @@
 <link rel="import" href="../polymer/polymer.html">
 <dom-module id="smart-select">
   <template>
+    <span class="smart-select__selected">{{ selected.label }}</span>
+    <section class="smart-select__choices">
+      <template is="dom-repeat" items="{{choices}}"><span data-value="{{item.value}}">{{item.label}}</span></template>
+    </section>
   </template>
 </dom-module>
 <script>
