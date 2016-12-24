@@ -83,7 +83,7 @@
           'value': '-',
           'label': 'Pick a value in the list'
         },
-        readOnly: true
+        notify: true
       }
     },
     listeners: {
@@ -95,6 +95,12 @@
     select: function(evt, detail) {
       this.selected = evt.target.item;
       this.fire('select', evt.target.item);
+      this.root.host.classList.add('closing');
+    },
+    fallInTransitionEndHandler: function(evt) {
+      if(evt.animationName !== 'fall-out') return;
+      this.opened = false;
+      this.root.host.classList.remove('closing');
     }
   });
 </script>
