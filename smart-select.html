@@ -151,7 +151,7 @@
       }
     },
     attached: function() {
-      this.$$('.smart-select__choices').addEventListener('animationend', this.fallInTransitionEndHandler.bind(this));
+      this.$$('.smart-select__choices').addEventListener('animationend', this.disappearanceAnimationEndHandler.bind(this));
     },
     open: function() {
       this.opened = true;
@@ -161,7 +161,7 @@
       this.fire('select', evt.target.item);
       this.root.host.classList.add('closing');
     },
-    fallInTransitionEndHandler: function(evt) {
+    disappearanceAnimationEndHandler: function(evt) {
       if(matchMedia('screen and (min-width:401px)').matches && evt.animationName !== 'fall-out') return;
       if(matchMedia('screen and (max-width:400px)').matches && evt.animationName !== 'slide-out') return;
       this.opened = false;
