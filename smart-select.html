@@ -58,9 +58,9 @@
       }
 
     </style>
-    <span class="smart-select__selected">{{ selected.label }}</span>
+    <span class="smart-select__selected">[[ selected.label ]]</span>
     <section class="smart-select__choices">
-      <template is="dom-repeat" items="{{choices}}"><span data-value="{{item.value}}">{{item.label}}</span></template>
+      <template is="dom-repeat" items="{{choices}}"><span on-click="select" item="{{item}}">{{item.label}}</span></template>
     </section>
   </template>
 </dom-module>
@@ -91,6 +91,9 @@
     },
     open: function() {
       this.opened = !this.opened;
+    },
+    select: function(evt, detail) {
+      this.selected = evt.target.item;
     }
   });
 </script>
