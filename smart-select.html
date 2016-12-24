@@ -30,12 +30,12 @@
 
       .smart-select__choices {
         position: fixed;
-        display: none;
+        display: flex;
         z-index: 2;
         flex-direction: column;
         width: 50vw;
         top: 50%; left: 50%;
-        transform: translate3d(-50%, -50%, 0);
+        transform: translate3d(-50%, -100vh, 0);
         background-color: #fff;
       }
 
@@ -54,13 +54,34 @@
       }
 
       :host[opened] .smart-select__choices {
-        display: flex;
+        animation: fall-in .6s forwards cubic-bezier(0.68, -0.55, 0.265, 1.55);
       }
 
+      :host.closing .smart-select__choices {
+        animation: fall-out .6s forwards cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+
+      @keyframes fall-in {
+        0% {
+          transform: translate3d(-50%, -100vh, 0);
+        }
+        100% {
+          transform: translate3d(-50%, -50%, 0);
+        }
+      }
+
+      @keyframes fall-out {
+        0% {
+          transform: translate3d(-50%, -50%, 0);
+        }
+        100% {
+          transform: translate3d(-50%, 100vh, 0);
+        }
+      }
     </style>
-    <span class="smart-select__selected">[[ selected.label ]]</span>
+    <span class="smart-select__selected" on-tap="open">[[ selected.label ]]</span>
     <section class="smart-select__choices">
-      <template is="dom-repeat" items="{{choices}}"><span on-click="select" item="{{item}}">{{item.label}}</span></template>
+      <template is="dom-repeat" items="{{choices}}"><span on-tap="select" item="{{item}}">{{item.label}}</span></template>
     </section>
   </template>
 </dom-module>
@@ -86,11 +107,11 @@
         notify: true
       }
     },
-    listeners: {
-      'click': 'open'
+    attached: function() {
+      this.$$('.smart-select__choices').addEventListener('animationend', this.fallInTransitionEndHandler.bind(this));
     },
     open: function() {
-      this.opened = !this.opened;
+      this.opened = true;
     },
     select: function(evt, detail) {
       this.selected = evt.target.item;
