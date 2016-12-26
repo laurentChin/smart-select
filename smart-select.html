@@ -171,8 +171,8 @@
       this.root.host.classList.add('closing');
     },
     disappearanceAnimationEndHandler: function(evt) {
-      if(matchMedia('screen and (min-width:401px)').matches && evt.animationName !== 'fall-out') return;
-      if(matchMedia('screen and (max-width:400px)').matches && evt.animationName !== 'slide-out') return;
+      if(matchMedia('screen and (min-width:401px)').matches && !/^fall-out/.test(evt.animationName)) return;
+      if(matchMedia('screen and (max-width:400px)').matches && !/^slide-out/.test(evt.animationName)) return;
       this.opened = false;
       this.root.host.classList.remove('closing');
     }
