@@ -1,3 +1,9 @@
+<script>
+  Polymer = {
+    lazyRegister: true,
+    useNativeCSSProperties: true
+  };
+</script>
 <link rel="import" href="../polymer/polymer.html">
 <dom-module id="smart-select">
   <template>
@@ -15,12 +21,13 @@
         width: 100vw;
         height: 100vh;
         z-index: 1;
-        background-color: rgba(0,0,0,0.4);
+        background-color: var(--overlay-background-color, rgba(0,0,0,0.4));
       }
 
       .smart-select__selected {
         display: block;
         border: 1px solid #000;
+        border: 1px solid var(--select-border-color, #000);
         border-radius: 4px;
         padding: 5px 10px;
         position: relative;
@@ -34,6 +41,7 @@
         z-index: 2;
         flex-direction: column;
         background-color: #fff;
+        background-color: var(--choices-background-color, #fff);
       }
 
       .smart-select__choices span {
@@ -44,6 +52,7 @@
 
       .smart-select__choices span:hover {
         background-color: rgba(0,0,0,.1);
+        background-color: var(--choices-hover-background-color, rgba(0,0,0,.1));
       }
 
       :host[opened]::before {
